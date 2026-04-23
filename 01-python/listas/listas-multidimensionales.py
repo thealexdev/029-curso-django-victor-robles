@@ -12,5 +12,7 @@ contactos = [
 # print(contactos[0][1])
 
 for contacto in contactos:
-    print(contacto[1])
-
+    nombre = contacto[0]
+    correo = contacto[1]
+    print(f"Nombre: {nombre}")
+    print(f"Correo: {correo}")
