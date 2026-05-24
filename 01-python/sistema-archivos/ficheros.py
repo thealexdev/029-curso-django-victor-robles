@@ -2,30 +2,30 @@ from io import open
 from pathlib import Path
 import shutil
 
-ruta = (
-    Path(
-        r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos"
-    )
-    / "nuevo-archivo.txt"
-)
+# ruta = (
+#     Path(
+#         r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos"
+#     )
+#     / "nuevo-archivo.txt"
+# )
 
 # a+ = "Abre el archivo para leer y escribir, y todo lo que escriba agrégalo al final."
-archivo = open(ruta, "a+", encoding="utf-8")
+# archivo = open(ruta, "a+", encoding="utf-8")
 
-archivo.write("Texto insertado\n")
+# archivo.write("Texto insertado\n")
 
-archivo.close()
+# archivo.close()
 
 # Abrir archivo
-ruta = (
-    Path(
-        r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos"
-    )
-    / "fichero.txt"
-)
+# ruta = (
+#     Path(
+#         r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos"
+#     )
+#     / "fichero.txt"
+# )
 
-# "r" = "Abre el archivo para leerlo"
-archivo_lectura = open(ruta, "r")
+# # "r" = "Abre el archivo para leerlo"
+# archivo_lectura = open(ruta, "r")
 
 # Leer contenido
 # contenido = archivo_lectura.read()
@@ -35,11 +35,11 @@ archivo_lectura = open(ruta, "r")
 #     print(elemento)
 
 # Leer contenido y guardar en lista
-lista = archivo_lectura.readline()
+# lista = archivo_lectura.readline()
 
-archivo_lectura.close()
+# archivo_lectura.close()
 
-print(lista)
+# print(lista)
 
 
 # Copiar un archivo
@@ -55,12 +55,26 @@ print(lista)
 # shutil.copyfile(ruta_original, ruta_nueva)
 
 # Moder un archivo
-ruta_original = Path(
-    r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos\fichero.txt"
-)
+# ruta_original = Path(
+#     r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos\fichero.txt"
+# )
 
-ruta_nueva = Path(
+# ruta_nueva = Path(
+#     r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos\ruta-nueva\archivo-movido-renombrado.txt"
+# )
+
+# shutil.move(ruta_original, ruta_nueva)
+
+# Eliminar archivos
+import os
+
+ruta_archivo_eliminar = Path(
     r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos\ruta-nueva\archivo-movido-renombrado.txt"
 )
 
-shutil.move(ruta_original, ruta_nueva)
+# os.remove(ruta_archivo_eliminar)
+
+if os.path.isfile(ruta_archivo_eliminar):
+    print("El archivo no se borro")
+else:
+    print("El archivo si se borro")
