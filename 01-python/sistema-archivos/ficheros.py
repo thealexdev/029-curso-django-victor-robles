@@ -1,5 +1,6 @@
 from io import open
 from pathlib import Path
+import shutil
 
 ruta = (
     Path(
@@ -39,3 +40,16 @@ lista = archivo_lectura.readline()
 archivo_lectura.close()
 
 print(lista)
+
+
+# Copiar un archivo
+ruta_original = Path(
+    r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos\fichero.txt"
+)
+
+ruta_nueva = Path(
+    r"C:\Users\alexi\OneDrive\Documents\GitHub\cur-django-vr-axv\01-python\sistema-archivos\ruta-nueva\fichero-copia.txt"
+)
+
+# copiamos un archivo, el metodo copyfile(), requiere la ruta vieja y la ruta nueva, ambos deben de tener el nombre del archivo original y asignar en la ruta nueva el nombre del archivo copia 
+shutil.copyfile(ruta_original, ruta_nueva)
