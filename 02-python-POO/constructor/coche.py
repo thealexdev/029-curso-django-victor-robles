@@ -1,10 +1,13 @@
 class Coche:
-    # Propiedades
+    # Propiedades / atributos
     color: "Azul"
     marca: "Nizan"
     modelo: "2026"
     velocidad: 300
     plazas: 2
+
+    # atributos privados
+    __soy_privado = "Soy un atributo privado"
 
     # constructor
     def __init__(self, color, marca, modelo, velocidad, plazas):
@@ -15,6 +18,9 @@ class Coche:
         self.plazas = plazas
 
     # Metodos
+    def getPrivado(self):
+        return self.__soy_privado
+
     def setColor(self, color):
         self.color = color
 
