@@ -19,3 +19,9 @@ print({carro03.getInfo()})
 print({carro02.getInfo()})
 print({carro04.getInfo()})
 print({carro05.getInfo()})
+
+
+if type(carro01) == Coche:
+    print("Es un objeto de tipo Coche")
+else:
+    print("No es un objeto")
