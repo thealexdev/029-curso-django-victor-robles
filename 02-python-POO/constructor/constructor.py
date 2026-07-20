@@ -22,8 +22,13 @@ print({carro05.getInfo()})
 
 print({carro01.getPrivado()})
 
-
+# detectar el tipado de los objetos
 if type(carro01) == Coche:
     print("Es un objeto de tipo Coche")
 else:
     print("No es un objeto")
+
+# accediendo directamente del atributo
+print(carro01.soy_publico)
+# accediendo mediante un metodo
+print(carro01.getPrivado())

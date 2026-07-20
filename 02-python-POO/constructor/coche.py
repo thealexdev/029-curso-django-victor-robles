@@ -6,11 +6,16 @@ class Coche:
     velocidad: 300
     plazas: 2
 
-    # atributos privados
+    # atributos privados: son accesibles solo con metodos
     __soy_privado = "Soy un atributo privado"
 
+    # atributos publicos: son accesibles sin metodos
+    soy_publico = "Soy un atributio publico"
+
     # constructor
-    def __init__(self, color, marca, modelo, velocidad, plazas):
+    def __init__(
+        self, color, marca, modelo, velocidad, plazas
+    ):
         self.color = color
         self.marca = marca
         self.modelo = modelo
