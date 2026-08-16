@@ -61,3 +61,13 @@ class Informatico(Persona):
 
     def repararPC(self):
         return "He reparado tu PC"
+
+
+class TecnicoRedes(Informatico):
+    def __init__(self):
+        super().__init__() # permite ingresar a los atributos y metodos de la clase padre heradada
+        self.auditarRedes = "Expoerto"
+        self.experienciaRedes = 15
+
+        def auditoria(self):
+            return "Estoy auditando"

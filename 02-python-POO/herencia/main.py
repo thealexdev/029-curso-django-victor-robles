@@ -57,3 +57,22 @@ print(f"La persona tiene una edad de: {persona.edad}")
 # Se invoca el método 'hablar()' que probablemente devuelve un mensaje
 # o realiza una acción relacionada con la persona
 print(persona.hablar())
+
+# Creamos una instancia de la clase informatico
+informatico_01 = clases.Informatico()
+
+# Le asignamos un nombre "Usando el mismo metodo de la clase Persona"
+informatico_01.setNombre("Alejandro")
+
+# Imprimos el valor del nombre
+print(f"El nombre del informatico es: {informatico_01.nombre}")
+print(f"Los lenguajes que sabe este informatico son: {informatico_01.lenguajes}")
+
+
+tecnico_01 = clases.TecnicoRedes()
+tecnico_01.setNombre("Manolin")
+print(f"La experiencia del tecnico es de: {tecnico_01.experienciaRedes} años")
+print(f"El nombre del informatico es: {tecnico_01.nombre}")
+
+# mostrando la herencia que se obtuvo gracias a super()
+print(tecnico_01.lenguajes)
