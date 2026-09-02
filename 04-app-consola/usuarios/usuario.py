@@ -1,3 +1,17 @@
+import mysql.connector
+
+database = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    passwd="root",
+    database="app_consola",
+)
+
+print(database)
+
+cursor = database.cursor(buffered=True)
+
+
 class Usuario:
 
     def __init__(self, nombre, apellidos, email, password):
