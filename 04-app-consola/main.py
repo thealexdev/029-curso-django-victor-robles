@@ -9,6 +9,9 @@ Proyecto Python y MySQL
 
 """
 
+from usuarios import acciones
+
+
 print(
     """
 Acciones disponibles:
@@ -18,9 +21,11 @@ Acciones disponibles:
 """
 )
 
+hazEl = acciones.Acciones()
+
 accion = int(input("Que quieres hacer?: "))
 
 if accion == 0:
-    print("Vamos a realizar el registro")
+    hazEl.registro()
 elif accion == 1:
-    print("Ingresa tus credenciales para continuar")
+    hazEl.login()
