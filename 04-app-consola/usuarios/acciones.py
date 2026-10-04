@@ -22,5 +22,17 @@ class Acciones:
 
     def login(self):
         print("Introduce tus claves")
-        email = input("Correo: ")
-        password = input("Contraseña: ")
+
+        try:
+            email = input("Correo: ")
+            password = input("Contraseña: ")
+
+            usuario = modelo.Usuario("", "", email, password)
+            login = usuario.identificar()
+
+            if email == login[3]:
+                print(f"Bienvenido")
+        except Exception as error:
+            print(type(error))
+            print(type(error).__name__)
+            print(f"Login incorrecto, intentalo mas tarde")
