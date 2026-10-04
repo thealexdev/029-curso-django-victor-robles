@@ -32,7 +32,37 @@ class Acciones:
 
             if email == login[3]:
                 print(f"Bienvenido")
+                self.proximasAcciones(login)
+
         except Exception as error:
             print(type(error))
             print(type(error).__name__)
             print(f"Login incorrecto, intentalo mas tarde")
+
+    def proximasAcciones(self, usuario):
+
+        print("""
+            Acciones disponibles:
+             - Crear una nota
+             - Mostrar notas
+             - Eliminar una nota
+             - Salir (salir)
+        """)
+
+        accion = input("Que quieres hacer?: ")
+
+        if accion == "crear":
+            print("Vamor a crear")
+            self.proximasAcciones(usuario)
+
+        elif accion == "mostrar":
+            print("Vamos a mostrar")
+            self.proximasAcciones(usuario)
+
+        elif accion == "eliminar":
+            print("Vamor a eliminar")
+            self.proximasAcciones(usuario)
+
+        elif accion == "salir":
+            print(f"Hasta pronto {usuario[1]}")
+            exit()
