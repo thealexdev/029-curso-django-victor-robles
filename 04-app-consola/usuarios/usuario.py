@@ -27,10 +27,13 @@ class Usuario:
         sql = "INSERT INTO usuarios VALUES(null, %s, %s, %s, %s, %s)"
         usuario = (self.nombre, self.apellidos, self.email, self.password, fecha)
 
-        cursor.execute(sql, usuario)
-        database.commit()
-
-        return [cursor.rowcount, self]
+        try:
+            cursor.execute(sql, usuario)
+            database.commit()
+            result = [cursor.rowcount, self]
+        except:
+            result = [0, self]
+        return result
 
     def identificar(self):
         return self.nombre
