@@ -16,3 +16,14 @@ class Acciones:
 
         else:
             print(f"No se ha guardado la nota")
+
+    def mostrar(self, usuario):
+        print(f"\n{usuario[1]}, aqui tienes tus notas: ")
+        nota = modelo.Nota(usuario[0], "", "")
+        notas = nota.listar()
+
+        for nota in notas:
+            print("************************")
+            print(nota[2])
+            print(nota[3])
+            print("************************")
