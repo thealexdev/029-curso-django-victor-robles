@@ -1,18 +1,10 @@
-import mysql.connector
 import datetime
 import hashlib
+import usuarios.conexion as conexion
 
-database = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="root",
-    database="app_consola",
-    # revisar tema de puertos
-)
-
-print(database)
-
-cursor = database.cursor(buffered=True)
+connect = conexion.conectar()
+database = connect[0]
+cursor = connect[1]
 
 
 class Usuario:
@@ -28,7 +20,7 @@ class Usuario:
 
         # cifrar contrasenia
         cifrado = hashlib.sha256()
-        cifrado.update(self.password.encode('utf8'))
+        cifrado.update(self.password.encode("utf8"))
 
         sql = "INSERT INTO usuarios VALUES(null, %s, %s, %s, %s, %s)"
         usuario = (self.nombre, self.apellidos, self.email, cifrado.hexdigest(), fecha)
