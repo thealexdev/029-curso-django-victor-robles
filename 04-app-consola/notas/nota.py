@@ -29,3 +29,13 @@ class Nota:
         cursor.execute(sql)
         result = cursor.fetchall()
         return result
+
+    def eliminar(self, id):
+        sql = (
+            f"""DELETE FROM notas WHERE usuario_id = {self.usuario_id} AND id = '{id}'"""
+        )
+
+        cursor.execute(sql)
+        database.commit()
+
+        return [cursor.rowcount, self]
